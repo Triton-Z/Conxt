@@ -1,6 +1,6 @@
 var x = 1;
 var y = 1;
-var backgroundTxt = document.getElementsByClassName("span");
+var backgroundTxt = document.getElementsByClassName("textCharacters");
 var player = document.getElementById("x"+x+"y"+y);
 function start (){
 player = document.getElementById("x"+x+"y"+y);
