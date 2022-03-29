@@ -4,5 +4,6 @@ var player = document.getElementById("x"+x+"y"+y);
 function start (){
 x++;
 y++;
+player = document.getElementById("x"+x+"y"+y);
 player.innerHTML="#";
 }
