@@ -12,5 +12,5 @@ y++;
 function replaceContent() {
 for (var i = 0; i<backgroundTxt.length; i++) {
 backgroundTxt[i].innerHTML = document.getElementById("inputField").value;
-
+  }
 }
