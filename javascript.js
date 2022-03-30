@@ -18,7 +18,7 @@ y++;
 x++;
 } else if (direction==3) {
 y=y-1;
-} else if (direction = 4) {
+} else if (direction==4) {
 x=x-1;
 }
 
