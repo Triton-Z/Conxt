@@ -14,11 +14,14 @@ player.innerHTML="#";
 
 if (direction==1) {
 y++;
-} else if (direction==2) {
+}  
+if (direction==2) {
 x++;
-} else if (direction==3) {
-y=y-1;
-} else if (direction==4) {
+} 
+if (direction==3) {
+y=-1;
+}
+if (direction==4) {
 x=x-1;
 }
 
