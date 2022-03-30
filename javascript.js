@@ -19,7 +19,7 @@ if (direction==2) {
 x++;
 } 
 if (direction==3) {
-y=-1;
+y=y-1;
 }
 if (direction==4) {
 x=x-1;
