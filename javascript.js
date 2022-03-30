@@ -5,8 +5,6 @@ var backgroundTxt = document.getElementsByClassName("textCharacters");
 var player = document.getElementById("x"+x+"y"+y);
 
 function move (direction){
-player = document.getElementById("x"+x+"y"+y);
-player.innerHTML="#";
 //1 is up
 //2 is right
 //3 is down
@@ -22,7 +20,8 @@ y=y-1;
 x=x-1;
 }
 
-
+player = document.getElementById("x"+x+"y"+y);
+player.innerHTML="#";
 } //function ending, don't get confused
 
 
