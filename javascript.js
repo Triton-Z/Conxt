@@ -5,6 +5,7 @@ var characterType = "0";
 var backgroundTxt = document.getElementsByClassName("textCharacters");
 var player = document.getElementById("x"+x+"y"+y);
 var remove = document.getElementById("x"+x+"y"+y);
+
 function move (direction){
 //1 is up
 //2 is right
@@ -22,7 +23,7 @@ x=x-1;
 }
 
 player = document.getElementById("x"+x+"y"+y);
-player.innerHTML="#";
+player.innerHTML=characterType;
 } //function ending, don't get confused
 
 
@@ -32,23 +33,25 @@ backgroundTxt[i].innerHTML = document.getElementById("inputField").value;
   }
 }
 
-function remove(direction, move)
+function remove(direction){
 
 if (direction==1) {
-//up
-
-} else if (direction==2) {
-//right
-	
-} else if (direction==3) {
-//down
-	
-} else if (direction==4) {
-//left
-
-}
-
-remove.innerHTML = 
+	//remove up
+	remove = document.getElementById("x"+x+"y"+y+1);
+	remove.innerHTML = "#";
+	} else if (direction==2) {
+	//remove right
+	remove = document.getElementById("x"+x+1+"y"+y);
+	remove.innerHTML = "#";	
+	} else if (direction==3) {
+	//remove down
+	remove = document.getElementById("x"+x+"y"+y-1);
+	remove.innerHTML = "#";	
+	} else if (direction==4) {
+	//remove left
+	remove = document.getElementById("x"+x-1+"y"+y);
+	remove.innerHTML = "#";	
+	}
 }
 
 window.onload = function(){
@@ -57,21 +60,25 @@ window.onload = function(){
        {
            //up
            move(1);
+	   remove(3);
        };   
 	   if(number.keyCode === 39)
        {
            //right
            move(2);
+	   remove(4);
        };
 	   if(number.keyCode === 40)
        {
            //down
            move(3);
+           remove(1);
        };   
 	   if(number.keyCode === 37)
        {
            //left
            move(4);
+	   remove(2);
        };
     };
 };
