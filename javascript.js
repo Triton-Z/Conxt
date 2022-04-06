@@ -30,3 +30,29 @@ for (var i = 0; i<backgroundTxt.length; i++) {
 backgroundTxt[i].innerHTML = document.getElementById("inputField").value;
   }
 }
+
+window.onload = function(){
+       window.onkeydown= function(number){
+	   if(number.keyCode === 38)
+       {
+           //up
+           move(1);
+       };   
+	   if(number.keyCode === 39)
+       {
+           //right
+           move(2);
+       };
+	   if(number.keyCode === 40)
+       {
+           //down
+           move(3);
+       };   
+	   if(number.keyCode === 37)
+       {
+           //left
+           move(4);
+       };
+    };
+};
+
