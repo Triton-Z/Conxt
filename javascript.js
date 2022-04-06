@@ -4,7 +4,7 @@ var y = 1;
 var characterType = "0";
 var backgroundTxt = document.getElementsByClassName("textCharacters");
 var player = document.getElementById("x"+x+"y"+y);
-var remove = document.getElementById("x"+x+"y"+y);
+var removeTxt = document.getElementById("x"+x+"y"+y);
 
 function move (direction){
 //1 is up
@@ -37,20 +37,20 @@ function remove(direction){
 
 if (direction==1) {
 	//remove up
-	remove = document.getElementById("x"+x+"y"+y+1);
-	remove.innerHTML = "#";
+	removeTxt = document.getElementById("x"+x+"y"+y+1);
+	removeTxt.innerHTML = "#";
 	} else if (direction==2) {
 	//remove right
-	remove = document.getElementById("x"+x+1+"y"+y);
-	remove.innerHTML = "#";	
+	removeTxt = document.getElementById("x"+x+1+"y"+y);
+	removeTxt.innerHTML = "#";	
 	} else if (direction==3) {
 	//remove down
-	remove = document.getElementById("x"+x+"y"+y-1);
-	remove.innerHTML = "#";	
+	removeTxt = document.getElementById("x"+x+"y"+y-1);
+	removeTxT.innerHTML = "#";	
 	} else if (direction==4) {
 	//remove left
-	remove = document.getElementById("x"+x-1+"y"+y);
-	remove.innerHTML = "#";	
+	removeTxt = document.getElementById("x"+x-1+"y"+y);
+	removeTxt.innerHTML = "#";	
 	}
 }
 
