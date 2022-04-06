@@ -33,25 +33,9 @@ backgroundTxt[i].innerHTML = document.getElementById("inputField").value;
   }
 }
 
-function remove(direction){
-
-if (direction==1) {
-	//remove up
-	removeTxt = document.getElementById("x"+x+"y"+y+1);
-	removeTxt.innerHTML = "#";
-	} else if (direction==2) {
-	//remove right
-	removeTxt = document.getElementById("x"+x+1+"y"+y);
-	removeTxt.innerHTML = "#";	
-	} else if (direction==3) {
-	//remove down
-	removeTxt = document.getElementById("x"+x+"y"+y-1);
-	removeTxT.innerHTML = "#";	
-	} else if (direction==4) {
-	//remove left
-	removeTxt = document.getElementById("x"+x-1+"y"+y);
-	removeTxt.innerHTML = "#";	
-	}
+function remove(){
+removeTxt = document.getElementById("x"+x+"y"+y);
+removeTxt.innerHTML = "-";
 }
 
 window.onload = function(){
@@ -59,26 +43,26 @@ window.onload = function(){
 	   if(number.keyCode === 38)
        {
            //up
-           move(1);
-	   remove(3);
+           remove();
+	   move(1);
        };   
 	   if(number.keyCode === 39)
        {
            //right
-           move(2);
-	   remove(4);
+           remove();
+	   move(2);
        };
 	   if(number.keyCode === 40)
        {
            //down
-           move(3);
-           remove(1);
+           remove();
+	   move(3);
        };   
 	   if(number.keyCode === 37)
        {
            //left
-           move(4);
-	   remove(2);
+           remove();
+	   move(4);
        };
     };
 };
