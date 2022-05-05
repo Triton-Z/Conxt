@@ -38,6 +38,7 @@ removeTxt = document.getElementById("x"+x+"y"+y);
 removeTxt.innerHTML = "-";
 }
 
+/**
 window.onload = function(){
        window.onkeydown= function(number){
 	   if(number.keyCode === 38)
@@ -66,4 +67,59 @@ window.onload = function(){
        };
     };
 };
+**/
+var up = false,
+    right = false,
+    down = false,
+    left = false,
+    x = window.innerWidth/2-130/2,
+    y = window.innerHeight/2-130/2
+document.addEventListener('keydown',press)
+function press(e){
+  if (e.keyCode === 38 /* up */ || e.keyCode === 87 /* w */ || e.keyCode === 90 /* z */){
+    up = true
+  }
+  if (e.keyCode === 39 /* right */ || e.keyCode === 68 /* d */){
+    right = true
+  }
+  if (e.keyCode === 40 /* down */ || e.keyCode === 83 /* s */){
+    down = true
+  }
+  if (e.keyCode === 37 /* left */ || e.keyCode === 65 /* a */ || e.keyCode === 81 /* q */){
+    left = true
+  }
+}
+document.addEventListener('keyup',release)
+function release(e){
+  if (e.keyCode === 38 /* up */ || e.keyCode === 87 /* w */ || e.keyCode === 90 /* z */){
+    up = false
+  }
+  if (e.keyCode === 39 /* right */ || e.keyCode === 68 /* d */){
+    right = false
+  }
+  if (e.keyCode === 40 /* down */ || e.keyCode === 83 /* s */){
+    down = false
+  }
+  if (e.keyCode === 37 /* left */ || e.keyCode === 65 /* a */ || e.keyCode === 81 /* q */){
+    left = false
+  }
+}
+function gameLoop(){
+  var div = document.querySelector('div')
+  if (up){
+    move(1);
+  }
+  if (right){
+    move(2);
+  }
+  if (down){
+    move(3);
+  }
+  if (left){
+    move(4);
+  }
+
+  window.requestAnimationFrame(gameLoop)
+}
+window.requestAnimationFrame(gameLoop)
 
