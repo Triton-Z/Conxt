@@ -5,10 +5,6 @@ var characterType = "0";
 var backgroundTxt = document.getElementsByClassName("textCharacters");
 var player = document.getElementById("x"+x+"y"+y);
 var removeTxt = document.getElementById("x"+x+"y"+y);
-var moveUp = false;
-var moveRight = false;
-var moveDown = false;
-var moveLeft = false;
 
 function move (direction){
 //1 is up
@@ -44,6 +40,7 @@ removeTxt.innerHTML = "-";
 
 
 window.onload = function(){
+	/**
 	window.onkeydown= function(number){
 	   if(number.keyCode === 38)
        {
@@ -70,4 +67,59 @@ window.onload = function(){
 	   move(4);
        };
     };
+    **/
+var up = false,
+    right = false,
+    down = false,
+    left = false,
+    x = 0,
+    y = 0;
+document.addEventListener('keydown',press)
+function press(e){
+  if (e.keyCode === 38 /* up */ || e.keyCode === 87 /* w */ || e.keyCode === 90 /* z */){
+    up = true
+  }
+  if (e.keyCode === 39 /* right */ || e.keyCode === 68 /* d */){
+    right = true
+  }
+  if (e.keyCode === 40 /* down */ || e.keyCode === 83 /* s */){
+    down = true
+  }
+  if (e.keyCode === 37 /* left */ || e.keyCode === 65 /* a */ || e.keyCode === 81 /* q */){
+    left = true
+  }
+}
+document.addEventListener('keyup',release)
+function release(e){
+  if (e.keyCode === 38 /* up */ || e.keyCode === 87 /* w */ || e.keyCode === 90 /* z */){
+    up = false
+  }
+  if (e.keyCode === 39 /* right */ || e.keyCode === 68 /* d */){
+    right = false
+  }
+  if (e.keyCode === 40 /* down */ || e.keyCode === 83 /* s */){
+    down = false
+  }
+  if (e.keyCode === 37 /* left */ || e.keyCode === 65 /* a */ || e.keyCode === 81 /* q */){
+    left = false
+  }
+}
+function gameLoop(){
+  var div = document.querySelector('div')
+  if (up){
+    y = y - 1
+  }
+  if (right){
+    x = x + 1
+  }
+  if (down){
+    y = y + 1
+  }
+  if (left){
+    x = x - 1
+  }
+  player = document.getElementById("x"+x+"y"+y);
+  window.requestAnimationFrame(gameLoop)
+}
+window.requestAnimationFrame(gameLoop)
 };
