@@ -66,9 +66,6 @@ window.onload = function(){
            //left
            moveleft = false;
        };
-		
-		
-		
            if(number.keyCode === 38)
        {
            //up
@@ -89,7 +86,27 @@ window.onload = function(){
            //left
            moveleft = true;
        };	
-		
+	
+       if (moveUp == true)
+       {
+	   remove(); 
+	   move(1);    
+       }       
+       if (moveRight == true)
+       {
+	   remove(); 
+	   move(2);    
+       }
+       if (moveDown == true)
+       {
+	   remove(); 
+	   move(3);    
+       } 
+       if (moveLeft == true)
+       {
+	   remove(); 
+	   move(4);    
+       } 
 	
 };	
 	
