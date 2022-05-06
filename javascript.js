@@ -5,6 +5,10 @@ var characterType = "0";
 var backgroundTxt = document.getElementsByClassName("textCharacters");
 var player = document.getElementById("x"+x+"y"+y);
 var removeTxt = document.getElementById("x"+x+"y"+y);
+var moveUp = false;
+var moveRight = false;
+var moveDown = false;
+var moveLeft = false;
 
 function move (direction){
 //1 is up
@@ -40,7 +44,41 @@ removeTxt.innerHTML = "-";
 
 
 window.onload = function(){
-       window.onkeydown= function(number){
+       
+	window.onkeydown= function(number){
+	   if(number.keyCode === 38)
+       {
+           //up
+           remove();
+	   move(1);
+       };   
+	   if(number.keyCode === 39)
+       {
+           //right
+           remove();
+	   move(2);
+       };
+	   if(number.keyCode === 40)
+       {
+           //down
+           remove();
+	   move(3);
+       };   
+	   if(number.keyCode === 37)
+       {
+           //left
+           remove();
+	   move(4);
+       };
+    };	
+	
+	
+	
+	
+	
+	
+	/**
+	window.onkeydown= function(number){
 	   if(number.keyCode === 38)
        {
            //up
@@ -66,4 +104,5 @@ window.onload = function(){
 	   move(4);
        };
     };
+    **/
 };
