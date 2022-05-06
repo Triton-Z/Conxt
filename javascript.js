@@ -46,31 +46,52 @@ removeTxt.innerHTML = "-";
 window.onload = function(){
        
 	window.onkeydown= function(number){
-	   if(number.keyCode === 38)
+	   if(!(number.keyCode === 38))
        {
            //up
-           remove();
-	   move(1);
+           moveUp = false;
+       };   
+	   if(!(number.keyCode === 39))
+       {
+           //right
+           moveRight = false;
+       };
+	   if(!(number.keyCode === 40))
+       {
+           //down
+           moveDown = false;
+       };   
+	   if(!(number.keyCode === 37))
+       {
+           //left
+           moveleft = false;
+       };
+		
+		
+		
+           if(number.keyCode === 38)
+       {
+           //up
+           moveUp = true;
        };   
 	   if(number.keyCode === 39)
        {
            //right
-           remove();
-	   move(2);
+           moveRight = true;
        };
 	   if(number.keyCode === 40)
        {
            //down
-           remove();
-	   move(3);
+           moveDown = true;
        };   
 	   if(number.keyCode === 37)
        {
            //left
-           remove();
-	   move(4);
-       };
-    };	
+           moveleft = true;
+       };	
+		
+	
+};	
 	
 	
 	
