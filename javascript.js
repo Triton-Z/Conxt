@@ -44,78 +44,6 @@ removeTxt.innerHTML = "-";
 
 
 window.onload = function(){
-       
-	window.onkeydown= function(number){
-	   if(!(number.keyCode === 38))
-       {
-           //up
-           moveUp = false;
-       };   
-	   if(!(number.keyCode === 39))
-       {
-           //right
-           moveRight = false;
-       };
-	   if(!(number.keyCode === 40))
-       {
-           //down
-           moveDown = false;
-       };   
-	   if(!(number.keyCode === 37))
-       {
-           //left
-           moveleft = false;
-       };
-           if(number.keyCode === 38)
-       {
-           //up
-           moveUp = true;
-       };   
-	   if(number.keyCode === 39)
-       {
-           //right
-           moveRight = true;
-       };
-	   if(number.keyCode === 40)
-       {
-           //down
-           moveDown = true;
-       };   
-	   if(number.keyCode === 37)
-       {
-           //left
-           moveleft = true;
-       };	
-	
-       if (moveUp == true)
-       {
-	   remove(); 
-	   move(1);    
-       }       
-       if (moveRight == true)
-       {
-	   remove(); 
-	   move(2);    
-       }
-       if (moveDown == true)
-       {
-	   remove(); 
-	   move(3);    
-       } 
-       if (moveLeft == true)
-       {
-	   remove(); 
-	   move(4);    
-       } 
-	
-};	
-	
-	
-	
-	
-	
-	
-	/**
 	window.onkeydown= function(number){
 	   if(number.keyCode === 38)
        {
@@ -142,5 +70,4 @@ window.onload = function(){
 	   move(4);
        };
     };
-    **/
 };
