@@ -5,7 +5,7 @@ var characterType = "0";
 var backgroundTxt = document.getElementsByClassName("textCharacters");
 var player = document.getElementById("x"+x+"y"+y);
 var removeTxt = document.getElementById("x"+x+"y"+y);
-
+const moveList = [" ", " ", " ", " "];
 function move (direction){
 //1 is up
 //2 is right
@@ -38,88 +38,56 @@ removeTxt = document.getElementById("x"+x+"y"+y);
 removeTxt.innerHTML = "-";
 }
 
+function removeList(){
+moveList[0]
+moveList[1]
+moveList[2]	
+moveList[3]	
+}
 
 window.onload = function(){
-	/**
 	window.onkeydown= function(number){
-	   if(number.keyCode === 38)
+	   if(number.keyCode === 38 && moveList[0]!="true")
        {
            //up
-           remove();
-	   move(1);
+           moveList[0] = "true";
        };   
-	   if(number.keyCode === 39)
+	   if(number.keyCode === 39 && moveList[1]!="true")
        {
            //right
-           remove();
-	   move(2);
+ 	   moveList[1] = "true";
        };
-	   if(number.keyCode === 40)
+	   if(number.keyCode === 40 && moveList[2]!="true")
        {
            //down
-           remove();
-	   move(3);
+ 	   moveList[2] = "true";
        };   
-	   if(number.keyCode === 37)
+	   if(number.keyCode === 37 && moveList[3]!="true")
        {
            //left
-           remove();
-	   move(4);
+  	   moveList[3] = "true";
        };
     };
-    **/
-var up = false,
-    right = false,
-    down = false,
-    left = false,
-    x = 0,
-    y = 0;
-document.addEventListener('keydown',press)
-function press(e){
-  if (e.keyCode === 38 /* up */ || e.keyCode === 87 /* w */ || e.keyCode === 90 /* z */){
-    up = true
-  }
-  if (e.keyCode === 39 /* right */ || e.keyCode === 68 /* d */){
-    right = true
-  }
-  if (e.keyCode === 40 /* down */ || e.keyCode === 83 /* s */){
-    down = true
-  }
-  if (e.keyCode === 37 /* left */ || e.keyCode === 65 /* a */ || e.keyCode === 81 /* q */){
-    left = true
-  }
+
+if (moveList[0]== true)
+{
+   remove();
+   move(1)
 }
-document.addEventListener('keyup',release)
-function release(e){
-  if (e.keyCode === 38 /* up */ || e.keyCode === 87 /* w */ || e.keyCode === 90 /* z */){
-    up = false
-  }
-  if (e.keyCode === 39 /* right */ || e.keyCode === 68 /* d */){
-    right = false
-  }
-  if (e.keyCode === 40 /* down */ || e.keyCode === 83 /* s */){
-    down = false
-  }
-  if (e.keyCode === 37 /* left */ || e.keyCode === 65 /* a */ || e.keyCode === 81 /* q */){
-    left = false
-  }
+if (moveList[1]== true)
+{
+   remove();
+   move(2)
 }
-function gameLoop(){
-  var div = document.querySelector('div')
-  if (up){
-    y = y - 1
-  }
-  if (right){
-    x = x + 1
-  }
-  if (down){
-    y = y + 1
-  }
-  if (left){
-    x = x - 1
-  }
-  player = document.getElementById("x"+x+"y"+y);
-  window.requestAnimationFrame(gameLoop)
+if (moveList[2]== true)
+{
+   remove();
+   move(3)
 }
-window.requestAnimationFrame(gameLoop)
+if (moveList[3]== true)
+{
+   remove();
+   move(4)
+}
+setTimeout(myFunction, 3000);
 };
