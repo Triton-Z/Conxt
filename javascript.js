@@ -89,5 +89,5 @@ if (moveList[3]== true)
    remove();
    move(4)
 }
-setTimeout(removeList, 3000);
+setTimeout(removeList, 300);
 };
