@@ -14,11 +14,14 @@ function move (direction){
 
 if (direction==1) {
 y++;
-} else if (direction==2) {
+}
+if (direction==2) {
 x++;
-} else if (direction==3) {
+}
+if (direction==3) {
 y=y-1;
-} else if (direction==4) {
+}
+if (direction==4) {
 x=x-1;
 }
 
@@ -39,10 +42,10 @@ removeTxt.innerHTML = "-";
 }
 
 function removeList(){
-moveList[0]
-moveList[1]
-moveList[2]	
-moveList[3]	
+moveList[0] = false;
+moveList[1] = false;
+moveList[2] = false;
+moveList[3] = false;
 }
 
 window.onload = function(){
